@@ -23,8 +23,19 @@ const SampleEffect = () => {
     const [timerRunning, setTimerRunning] = useState(false);
 
     useEffect(() => {
-        console.log('we initiated a state change');
+        let timer;
+        if (timerRunning) {
+            timer = window.setTimeout(() => {
+                console.log('the timer expired', Date.now()/1000);
+                setTimerRunning(false);
+            }, 2000)
+        };
+        return () => {window.clearTimeout(timer); console.log('thetimer was cleaned up', Date.now()/1000)};
     });
+
+    useEffect(() => {
+        console.log('this painting needs some happy trees');
+    }, []);
     
     let buttonHandler = () => {
         if (!timerRunning) {
