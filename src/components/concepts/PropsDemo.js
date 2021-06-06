@@ -27,7 +27,7 @@ const PropsDemo = () => {
     };
 
     const toggleBackgroundColor = () => {
-        backgroundColor === 'white' ? setBackgroundColor('black') : setBackgroundColor('white');
+        backgroundColor === 'pink' ? setBackgroundColor('black') : setBackgroundColor('pink');
     };
 
     const toggleBorderRadius = () => {
